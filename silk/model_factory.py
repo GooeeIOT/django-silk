@@ -105,9 +105,9 @@ class RequestModelFactory(object):
         else:
             pattern = re.compile(r'username|api|token|key|secret|password|signature', re.I)
             CLEANSED_SUBSTITUTE = '********************'
-            for key in json_body:
-                if pattern.search(key):
-                    json_body[key] = CLEANSED_SUBSTITUTE
+            #for key in json_body:
+            #    if pattern.search(key):
+            #        json_body[key] = CLEANSED_SUBSTITUTE
             body = json.dumps(json_body)
         return body
 
